@@ -6,6 +6,7 @@
 // IMPORTANT: keep these ids + lessonCounts in sync with
 // client/src/curriculum/index.js
 export const MODULES = [
+  { id: "welcome", lessonCount: 3 },
   { id: "foundations", lessonCount: 3 },
   { id: "git", lessonCount: 4 },
   { id: "apis", lessonCount: 3 },

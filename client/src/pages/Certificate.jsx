@@ -54,9 +54,9 @@ export default function Certificate() {
         <div className="rule" />
         <p className="body-text">
           has successfully completed the Disruption Lab onboarding program, demonstrating
-          working knowledge of Git &amp; GitHub, APIs, cloud infrastructure (AWS), databases
-          &amp; secrets management, effective use of AI tools, and team-based, deployment-friendly
-          software development.
+          working knowledge of team practices &amp; expectations, Git &amp; GitHub, APIs, cloud
+          infrastructure (AWS), databases &amp; secrets management, effective use of AI tools, and
+          team-based, deployment-friendly software development.
         </p>
         <div className="row" style={{ justifyContent: "space-around", marginTop: 34, flexWrap: "wrap", gap: 20 }}>
           <div>

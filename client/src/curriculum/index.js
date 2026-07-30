@@ -9,15 +9,203 @@
 export const TOTAL_ESTIMATE_HOURS = "10–15 hours";
 
 export const SUGGESTED_PLAN = [
-  { day: "Day 1", focus: "Module 1 · Dev Environment & Command Line", hours: "~1 hr" },
-  { day: "Days 2–3", focus: "Module 2 · Git & GitHub (the big one)", hours: "~3 hrs" },
-  { day: "Day 4", focus: "Module 3 · APIs & How the Web Talks", hours: "~2 hrs" },
-  { day: "Day 5", focus: "Module 4 · Cloud & AWS", hours: "~2.5 hrs" },
-  { day: "Day 6", focus: "Module 5 · Data & Secrets  +  Module 6 · AI Tools", hours: "~3 hrs" },
-  { day: "Day 7", focus: "Module 7 · Working in a Team & Shipping  +  Certificate", hours: "~2 hrs" },
+  { day: "Day 1", focus: "Welcome & Team Expectations  +  Dev Environment & Command Line", hours: "~1.5 hrs" },
+  { day: "Days 2–3", focus: "Git & GitHub (the big one)", hours: "~3 hrs" },
+  { day: "Day 4", focus: "APIs & How the Web Talks", hours: "~2 hrs" },
+  { day: "Day 5", focus: "Cloud & AWS", hours: "~2.5 hrs" },
+  { day: "Day 6", focus: "Data & Secrets  +  Using AI Tools", hours: "~3 hrs" },
+  { day: "Day 7", focus: "Working in a Team & Shipping  +  Certificate", hours: "~2 hrs" },
 ];
 
 export const modules = [
+  // ───────────────────────────────────────────── Intro · Team Expectations
+  {
+    id: "welcome",
+    title: "Welcome & Team Expectations",
+    emoji: "",
+    estMinutes: 40,
+    blurb:
+      "Before any code: how a Disruption Lab team runs week to week, what's expected of you, and who's there to help you grow.",
+    lessons: [
+      {
+        id: "welcome-1",
+        title: "The weekly rhythm: standup, dev night & client calls",
+        minutes: 14,
+        body: `## You're joining a team, not just a codebase
+
+Disruption Lab projects are built by small teams shipping real software for real clients. That only works if everyone shows up to a few shared touchpoints each week. Here are the three you'll hear about constantly.
+
+*(Exact days, times, and tools vary by team — your PM will share yours. What matters is understanding what each event is **for**.)*
+
+## Standup
+
+A **standup** is a short, regular check-in (often 1–2x per week for student teams). Everyone quickly answers three questions:
+
+1. **What did I do** since we last met?
+2. **What am I doing** next?
+3. **What's blocking me?**
+
+**What it looks like:** the team goes around one by one, ~1–2 minutes each, usually led by the PM or TL. It is *not* a place to solve problems in depth — if you're blocked, you name it, and someone follows up with you after. The goal is **visibility**: everyone knows where the project stands and blockers surface early instead of festering.
+
+## Dev night
+
+**Dev night** is the team's main working session — usually in person, a couple of hours, everyone building together. It's the heartbeat of the week.
+
+**What it looks like:** you work through your assigned tasks, **pair up** with teammates, and **ask your TL for help** when you're stuck. The PM checks in on progress and priorities. Most of the real collaboration, learning, and unblocking happens here — which is exactly why showing up matters so much. Come with your environment set up and your current task in mind.
+
+## Client calls
+
+**Client calls** are meetings with the actual client or stakeholder the project is being built for. They're more formal than internal meetings.
+
+**What they look like:** the PM (often with the TL) leads the conversation. You might **demo the feature you built**, answer questions about it, or take notes on new requirements. Be prepared, be professional, and **don't overpromise** — if you're unsure whether something is possible, say you'll follow up rather than committing on the spot. You represent Disruption Lab on these calls.`,
+      },
+      {
+        id: "welcome-2",
+        title: "Attendance & communication expectations",
+        minutes: 13,
+        body: `## Your teammates are counting on you
+
+In a class, missing a session mostly affects you. On a team, **your absence blocks other people** — a reviewer waiting on your PR, a teammate who needs your endpoint, a PM reporting progress to the client. Reliability is the single most valued trait in a new member.
+
+## Attendance
+
+- **Treat standups, dev nights, and your client calls as commitments**, not optional drop-ins.
+- Consistent presence is how you build trust, learn fastest, and get the good opportunities.
+
+## When you can't make it
+
+Life happens — that's fine. What's **not** fine is going silent. The expectation is simple:
+
+- **Give notice in advance**, not after the fact.
+- Message your **PM or TL** as early as you know.
+- A quick "I can't make dev night Thursday, but I'll have my ticket done by Friday and I'm available on Slack" keeps everything running.
+
+## Everyday communication
+
+- **Be reachable.** Check your team's channel (Slack/Discord) regularly and reply within about a day.
+- **Raise blockers early.** If you're stuck for more than ~30 minutes, say so — struggling productively is good, suffering in silence for days is not.
+- **Communicate status proactively.** If a task is going to slip, flag it *before* the deadline.
+- **The worst thing you can do is disappear.** Ghosting a team — going quiet with no updates — breaks trust fast and is the fastest way to lose responsibilities.
+
+## Professionalism
+
+Especially on client calls and in shared channels, remember you're representing Disruption Lab. Be respectful, communicate clearly, and follow through on what you say you'll do.`,
+      },
+      {
+        id: "welcome-3",
+        title: "Who's who: PMs, TLs & growing in DLab",
+        minutes: 13,
+        body: `## Two people you'll work closely with
+
+Every Disruption Lab team has a **Project Manager (PM)** and a **Team Lead (TL)**. Knowing who to go to for what will save you a lot of time.
+
+## Team Lead (TL) — your technical guide
+
+The TL owns the **technical direction** of the project.
+
+- Sets the architecture and tech decisions.
+- **Reviews your code** and pull requests.
+- **Unblocks you technically** and mentors you as you learn.
+
+**Go to your TL for:** "How should I build this?", "Why won't this work?", "Is this the right approach?", code review, and anything hands-on-technical.
+
+## Project Manager (PM) — your coordinator & client link
+
+The PM owns **scope, timeline, and the client relationship**.
+
+- Runs standups and keeps the project on track.
+- Decides **priorities** — what the team works on and in what order.
+- Is the **main point of contact with the client**.
+
+**Go to your PM for:** "What should I work on next?", "What's the priority?", questions about deadlines, client requirements, or if you'll be absent.
+
+| You need… | Ask the… |
+|---|---|
+| Help writing or fixing code | TL |
+| A code review | TL |
+| To know what to work on next | PM |
+| To report you'll miss a session | PM (and your TL) |
+| Clarity on a client requirement | PM |
+
+## How PMs and TLs help you advance
+
+Your PM and TL aren't just there to assign work — they're the people who **notice your growth and open doors** for you. In Disruption Lab, roles are often **filled from within**: today's developer is next semester's TL or PM.
+
+They can help you advance by giving **feedback**, trusting you with **more ownership**, and recommending you for **leadership roles** — but they can only do that if you give them something to notice. The members who move up tend to:
+
+- **Be reliable** — do what they said they'd do, on time.
+- **Take ownership** — see a task through, and flag problems early instead of hiding them.
+- **Communicate well** — keep the team in the loop.
+- **Help teammates** — answer questions, review each other's work.
+- **Ask for growth** — tell your PM/TL you're interested in more responsibility or in becoming a lead. They can't read your mind.
+
+Do those consistently, and you won't just finish onboarding — you'll be on track to lead. That's the whole point of Disruption Lab.`,
+      },
+    ],
+    quiz: [
+      {
+        q: "What are you expected to share at a standup?",
+        options: [
+          "A detailed live debugging session for your current bug",
+          "What you did, what you're doing next, and any blockers — briefly",
+          "A full demo of every feature to the client",
+          "Nothing — standups are just for the PM to talk",
+        ],
+        answer: 1,
+      },
+      {
+        q: "What is 'dev night'?",
+        options: [
+          "A formal presentation to the client",
+          "An optional social event with no work involved",
+          "The team's main working session where you build together and get help from your TL",
+          "A written status report submitted online",
+        ],
+        answer: 2,
+      },
+      {
+        q: "You realize you can't attend this week's dev night. What should you do?",
+        options: [
+          "Say nothing and explain afterward if someone asks",
+          "Message your PM/TL in advance to let them know and share your plan",
+          "Just skip it — attendance is optional",
+          "Quietly leave the team's channel",
+        ],
+        answer: 1,
+      },
+      {
+        q: "You're stuck on how to architect a feature technically. Who is your go-to?",
+        options: [
+          "The client, directly",
+          "The Team Lead (TL)",
+          "Nobody — you must figure it out alone",
+          "The Project Manager (PM)",
+        ],
+        answer: 1,
+      },
+      {
+        q: "Who typically owns the timeline, priorities, and the client relationship?",
+        options: [
+          "The Team Lead (TL)",
+          "The Project Manager (PM)",
+          "Each developer individually",
+          "The client",
+        ],
+        answer: 1,
+      },
+      {
+        q: "Which best describes how to advance toward a leadership role in Disruption Lab?",
+        options: [
+          "Work in silence and hope someone notices",
+          "Be reliable, take ownership, communicate well, help teammates, and tell your PM/TL you want to grow",
+          "Only focus on writing code and skip all meetings",
+          "Wait until you're asked with no effort on your part",
+        ],
+        answer: 1,
+      },
+    ],
+  },
+
   // ───────────────────────────────────────────────────────────── Module 1
   {
     id: "foundations",

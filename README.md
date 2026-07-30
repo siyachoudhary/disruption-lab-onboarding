@@ -11,17 +11,18 @@ Designed to be completed in **~10–15 hours over one week**.
 
 ## What's inside
 
-**7 modules · 22 lessons · a quiz per module**
+**8 modules · 25 lessons · a quiz per module**
 
 | # | Module | ~Time |
 |---|--------|------|
-| 1 | Dev Environment & the Command Line | 1 hr |
-| 2 | Git & GitHub (push/pull/clone/branches/PRs/forking) | 3 hrs |
-| 3 | APIs & How the Web Talks | 2 hrs |
-| 4 | Cloud & AWS (EC2, S3, and when to use each) | 2.5 hrs |
-| 5 | Data, Databases & Secrets | 1.5 hrs |
-| 6 | Using AI Tools Effectively | 1.5 hrs |
-| 7 | Working in a Team & Shipping | 2 hrs |
+| 1 | Welcome & Team Expectations (standup, dev night, client calls, PM/TL roles) | 40 min |
+| 2 | Dev Environment & the Command Line | 1 hr |
+| 3 | Git & GitHub (push/pull/clone/branches/PRs/forking) | 3 hrs |
+| 4 | APIs & How the Web Talks | 2 hrs |
+| 5 | Cloud & AWS (EC2, S3, and when to use each) | 2.5 hrs |
+| 6 | Data, Databases & Secrets | 1.5 hrs |
+| 7 | Using AI Tools Effectively | 1.5 hrs |
+| 8 | Working in a Team & Shipping | 2 hrs |
 
 The in-app **Dashboard** shows a suggested day-by-day one-week schedule and live progress.
 
