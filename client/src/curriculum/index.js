@@ -59,7 +59,16 @@ A **standup** is a short, regular check-in (often 1–2x per week for student te
 
 **Client calls** are meetings with the actual client or stakeholder the project is being built for. They're more formal than internal meetings.
 
-**What they look like:** the PM (often with the TL) leads the conversation. You might **demo the feature you built**, answer questions about it, or take notes on new requirements. Be prepared, be professional, and **don't overpromise** — if you're unsure whether something is possible, say you'll follow up rather than committing on the spot. You represent Disruption Lab on these calls.`,
+**What they look like:** the PM (often with the TL) leads the conversation. You might **demo the feature you built**, answer questions about it, or take notes on new requirements. Be prepared, be professional, and **don't overpromise** — if you're unsure whether something is possible, say you'll follow up rather than committing on the spot. You represent Disruption Lab on these calls.
+
+## Org-wide & social events
+
+Beyond your team's day-to-day meetings, Disruption Lab also holds **org-wide events** (things involving the whole lab) and **social events**. These are a big part of what makes DLab more than just a set of projects — they're how you meet people across other teams and become part of the community.
+
+**Whether an event is mandatory will always be communicated to you:**
+
+- **If it's mandatory** — treat it exactly like your team meetings. Not showing up without a proper excuse is a **strike**.
+- **If it's not mandatory** — we still **highly recommend attending**. They're genuinely worth your time, and showing up is one of the easiest ways to build relationships and get noticed.`,
       },
       {
         id: "welcome-2",
@@ -110,6 +119,7 @@ A Disruption Lab team only works if everyone can rely on everyone else. The **st
 Your project leadership has the final say, but these are the things that typically count as a strike:
 
 - **An unexcused absence** from a required team event — dev night, standup, or a client call you were expected to attend.
+- **An unexcused absence from a mandatory org-wide or social event** (you'll always be told when one is mandatory).
 - **Not completing this onboarding certification before Dev Night 1.** You get about a week from kickoff; finishing it is your first responsibility on the team.
 - **Going unresponsive / ghosting** — not replying in your team channel for an extended stretch with no heads-up.
 - **Repeatedly missing your committed deadlines or tickets** without communicating about it.
