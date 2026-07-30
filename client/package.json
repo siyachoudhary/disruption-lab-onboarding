@@ -1,0 +1,24 @@
+{
+  "name": "disruption-lab-onboarding-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:pages": "DEPLOY_BASE=/disruption-lab-onboarding/ VITE_DEMO=true vite build && touch dist/.nojekyll",
+    "deploy": "npm run build:pages && gh-pages -d dist -t true"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "gh-pages": "^6.1.1",
+    "vite": "^5.4.0"
+  }
+}
