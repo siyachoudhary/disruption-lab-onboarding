@@ -49,7 +49,7 @@ A **standup** is a short, regular check-in (often 1–2x per week for student te
 
 ## Dev night
 
-**Dev night** is the team's main working session — usually in person, a couple of hours, everyone building together. It's the heartbeat of the week.
+**Dev night** is the team's main working session — **2 hours per week**, everyone building together. It's the heartbeat of the week. **Your project leadership sets the time and place**, so watch your team channel for the details.
 
 **What it looks like:** you work through your assigned tasks, **pair up** with teammates, and **ask your TL for help** when you're stuck. The PM checks in on progress and priorities. Most of the real collaboration, learning, and unblocking happens here — which is exactly why showing up matters so much. Come with your environment set up and your current task in mind.
 
@@ -72,13 +72,17 @@ In a class, missing a session mostly affects you. On a team, **your absence bloc
 - **Treat standups, dev nights, and your client calls as commitments**, not optional drop-ins.
 - Consistent presence is how you build trust, learn fastest, and get the good opportunities.
 
+## The strike policy
+
+Attendance is taken seriously: **if you accumulate 3 or more unexcused absence strikes, you will be removed from the lab.** The word that matters is **unexcused** — an absence you communicate about in advance is a very different thing from simply not showing up. The rule isn't there to punish you; it's there because a team can't function when members disappear without notice.
+
 ## When you can't make it
 
-Life happens — that's fine. What's **not** fine is going silent. The expectation is simple:
+Life happens — that's fine, and it's how you avoid a strike. What's **not** fine is going silent. The expectation is simple:
 
-- **Give notice in advance**, not after the fact.
+- **Give notice in advance**, not after the fact — this is what gets an absence excused.
 - Message your **PM or TL** as early as you know.
-- A quick "I can't make dev night Thursday, but I'll have my ticket done by Friday and I'm available on Slack" keeps everything running.
+- A quick "I can't make dev night this week, but I'll have my ticket done by Friday and I'm available on Slack" keeps everything running.
 
 ## Everyday communication
 
@@ -126,6 +130,18 @@ The PM owns **scope, timeline, and the client relationship**.
 | To know what to work on next | PM |
 | To report you'll miss a session | PM (and your TL) |
 | Clarity on a client requirement | PM |
+
+## Senior leadership: Engineering Manager & Head of Tech
+
+Beyond your PM and TL, every project has an **Engineering Manager (EM)** and a **Head of Tech** assigned from Disruption Lab's senior leadership team. They are **not as hands-on** as your PM and TL — you won't see them at every session — but they're **around every now and then** to support the project and check in.
+
+Their job is to **help things run smoothly at a higher level**, for example:
+
+- Helping **coordinate client communication** when it needs a senior touch.
+- Sorting out **technical access** (accounts, tools, credentials, permissions the team needs).
+- Providing guidance and unblocking issues that are above the day-to-day.
+
+You generally won't go to them for routine work — your PM and TL are your first stops — but it's good to know they exist, and it's a great sign when they're around. Treat them with the same professionalism you'd bring to a client call.
 
 ## How PMs and TLs help you advance
 
@@ -200,6 +216,36 @@ Do those consistently, and you won't just finish onboarding — you'll be on tra
           "Be reliable, take ownership, communicate well, help teammates, and tell your PM/TL you want to grow",
           "Only focus on writing code and skip all meetings",
           "Wait until you're asked with no effort on your part",
+        ],
+        answer: 1,
+      },
+      {
+        q: "What happens if you accumulate 3 or more unexcused absence strikes?",
+        options: [
+          "Nothing — attendance isn't tracked",
+          "You get a warning email only",
+          "You will be removed from the lab",
+          "Your certificate is revoked",
+        ],
+        answer: 2,
+      },
+      {
+        q: "How much time per week is dev night, and who sets when and where it happens?",
+        options: [
+          "2 hours per week; project leadership decides the time and place",
+          "As long as you want; you pick the time yourself",
+          "30 minutes per week; the client decides",
+          "It has no set length and is optional",
+        ],
+        answer: 0,
+      },
+      {
+        q: "What role do the Engineering Manager and Head of Tech play on your project?",
+        options: [
+          "They are your day-to-day contacts for every coding task",
+          "Senior leaders who are less hands-on but help coordinate client comms and technical access",
+          "They are the external client",
+          "They only grade your onboarding quizzes",
         ],
         answer: 1,
       },
