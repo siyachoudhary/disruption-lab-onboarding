@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { overallProgress, allComplete } from "../progress";
 import { modules } from "../curriculum";
 import Logo from "../components/Logo";
+import { IS_DEMO } from "../api";
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString("en-US", {
@@ -12,7 +13,9 @@ function formatDate(d) {
 
 export default function Certificate() {
   const { user } = useAuth();
-  const done = allComplete(user);
+  // In the static demo build, the certificate is always unlocked so visitors
+  // can preview it without completing every module. The real build stays gated.
+  const done = allComplete(user) || IS_DEMO;
   const overall = overallProgress(user);
 
   if (!done) {

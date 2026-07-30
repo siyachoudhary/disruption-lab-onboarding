@@ -4,12 +4,13 @@ import { useAuth } from "../context/AuthContext";
 import ProgressBar from "./ProgressBar";
 import { modules } from "../curriculum";
 import { moduleProgress, overallProgress, allComplete, isLessonDone } from "../progress";
+import { IS_DEMO } from "../api";
 
 export default function Sidebar({ open = true, onNavigate = () => {} }) {
   const { user } = useAuth();
   const location = useLocation();
   const overall = overallProgress(user);
-  const certReady = allComplete(user);
+  const certReady = allComplete(user) || IS_DEMO;
 
   // Which module is currently open (from the URL), so we can auto-expand it.
   const activeModuleId = location.pathname.startsWith("/module/")
