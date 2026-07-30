@@ -5,7 +5,7 @@ import ProgressBar from "./ProgressBar";
 import { modules } from "../curriculum";
 import { moduleProgress, overallProgress, allComplete, isLessonDone } from "../progress";
 
-export default function Sidebar({ collapsed = false }) {
+export default function Sidebar({ open = true, onNavigate = () => {} }) {
   const { user } = useAuth();
   const location = useLocation();
   const overall = overallProgress(user);
@@ -29,7 +29,7 @@ export default function Sidebar({ collapsed = false }) {
     setExpanded((e) => ({ ...e, [idKey]: !e[idKey] }));
 
   return (
-    <aside className={"sidebar" + (collapsed ? " collapsed" : "")}>
+    <aside className={"sidebar" + (open ? "" : " collapsed")}>
       {/* Overall progress */}
       <div className="sidebar-progress">
         <div className="row" style={{ justifyContent: "space-between", marginBottom: 8 }}>
@@ -42,7 +42,7 @@ export default function Sidebar({ collapsed = false }) {
         </div>
       </div>
 
-      <NavLink to="/" end className="side-link">
+      <NavLink to="/" end className="side-link" onClick={onNavigate}>
         <span className="side-link-label">Dashboard</span>
       </NavLink>
 
@@ -66,7 +66,7 @@ export default function Sidebar({ collapsed = false }) {
                 >
                   <span className={"caret" + (isOpen ? " open" : "")}>▸</span>
                 </button>
-                <NavLink to={`/module/${mod.id}`} className="side-module-link">
+                <NavLink to={`/module/${mod.id}`} className="side-module-link" onClick={onNavigate}>
                   <span className={"side-num" + (mp.complete ? " done" : "")}>
                     {mp.complete ? "✓" : i + 1}
                   </span>
@@ -96,6 +96,7 @@ export default function Sidebar({ collapsed = false }) {
                         key={l.id}
                         to={`/module/${mod.id}/lesson/${li}`}
                         className={({ isActive }) => "side-lesson" + (isActive ? " active" : "")}
+                        onClick={onNavigate}
                       >
                         <span className={"side-lesson-dot" + (done ? " done" : "")}>
                           {done ? "✓" : ""}
@@ -107,6 +108,7 @@ export default function Sidebar({ collapsed = false }) {
                   <NavLink
                     to={`/module/${mod.id}/quiz`}
                     className={({ isActive }) => "side-lesson quiz" + (isActive ? " active" : "")}
+                    onClick={onNavigate}
                   >
                     <span className={"side-lesson-dot" + (mp.quizPassed ? " done" : "")}>
                       {mp.quizPassed ? "✓" : ""}
@@ -123,13 +125,13 @@ export default function Sidebar({ collapsed = false }) {
       </nav>
 
       <div className="side-heading">Finish</div>
-      <NavLink to="/certificate" className="side-link">
+      <NavLink to="/certificate" className="side-link" onClick={onNavigate}>
         <span className="side-link-label">Certificate</span>
         <span className={"side-tag " + (certReady ? "ready" : "locked")}>
           {certReady ? "Ready" : "Locked"}
         </span>
       </NavLink>
-      <NavLink to="/settings" className="side-link">
+      <NavLink to="/settings" className="side-link" onClick={onNavigate}>
         <span className="side-link-label">Settings</span>
       </NavLink>
     </aside>

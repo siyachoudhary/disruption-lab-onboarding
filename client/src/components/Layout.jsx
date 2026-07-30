@@ -11,19 +11,26 @@ export default function Layout({ children }) {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
-  // Sidebar collapse state, remembered across reloads.
-  const [collapsed, setCollapsed] = useState(
-    () => localStorage.getItem("dl_sidebar_collapsed") === "1"
-  );
-  const toggleSidebar = () => {
-    setCollapsed((c) => {
-      localStorage.setItem("dl_sidebar_collapsed", c ? "0" : "1");
-      return !c;
-    });
+  // Sidebar open/closed. Default: open on desktop, closed on phones. Remembered
+  // across reloads once the user makes a choice.
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    const stored = localStorage.getItem("dl_sidebar_open");
+    if (stored !== null) return stored === "1";
+    return window.innerWidth > 860;
+  });
+  const setOpen = (v) => {
+    setSidebarOpen(v);
+    localStorage.setItem("dl_sidebar_open", v ? "1" : "0");
+  };
+  const toggleSidebar = () => setOpen(!sidebarOpen);
+
+  // On phones, close the drawer after tapping a link so content is visible.
+  const closeOnMobile = () => {
+    if (window.matchMedia("(max-width: 860px)").matches) setOpen(false);
   };
 
   // Toggling the theme also persists it to the user's account (if logged in).
-  const onToggle = async () => {
+  const onToggleTheme = async () => {
     toggleTheme();
     if (user) {
       const next = theme === "light" ? "dark" : "light";
@@ -48,8 +55,8 @@ export default function Layout({ children }) {
           <button
             className="nav-toggle"
             onClick={toggleSidebar}
-            aria-label={collapsed ? "Show menu" : "Hide menu"}
-            title={collapsed ? "Show menu" : "Hide menu"}
+            aria-label={sidebarOpen ? "Hide menu" : "Show menu"}
+            title={sidebarOpen ? "Hide menu" : "Show menu"}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
               <rect x="2" y="4" width="16" height="2" rx="1" fill="currentColor" />
@@ -66,7 +73,7 @@ export default function Layout({ children }) {
           </div>
         </div>
         <div className="spacer" />
-        <button className="btn subtle" onClick={onToggle}>
+        <button className="btn subtle" onClick={onToggleTheme}>
           {theme === "light" ? "Dark mode" : "Light mode"}
         </button>
         {user && (
@@ -84,7 +91,10 @@ export default function Layout({ children }) {
 
       {user ? (
         <div className="shell">
-          <Sidebar collapsed={collapsed} />
+          <Sidebar open={sidebarOpen} onNavigate={closeOnMobile} />
+          {sidebarOpen && (
+            <div className="sidebar-backdrop no-print" onClick={() => setOpen(false)} />
+          )}
           <main className="shell-main">{children}</main>
         </div>
       ) : (
