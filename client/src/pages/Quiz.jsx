@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { api } from "../api";
 import { moduleById, modules } from "../curriculum";
+import { moduleProgress } from "../progress";
 
 export default function Quiz() {
   const { id } = useParams();
@@ -16,6 +17,28 @@ export default function Quiz() {
   const [busy, setBusy] = useState(false);
 
   if (!mod) return <div className="container"><p>Module not found.</p></div>;
+
+  // The quiz stays locked until every lesson in the module has been read.
+  const mp = moduleProgress(user, mod);
+  const lessonsLeft = mp.totalLessons - mp.lessonsDone;
+  if (lessonsLeft > 0) {
+    const firstUnread = mod.lessons.findIndex((l) => !mp.record?.lessonsCompleted.includes(l.id));
+    const goTo = firstUnread === -1 ? 0 : firstUnread;
+    return (
+      <div className="container narrow">
+        <div className="card center">
+          <h1 style={{ marginTop: 0 }}>Quiz locked</h1>
+          <p className="muted">
+            Finish all {mp.totalLessons} lessons in “{mod.title}” before taking the quiz —
+            you have {lessonsLeft} lesson{lessonsLeft === 1 ? "" : "s"} left to read.
+          </p>
+          <button className="btn" onClick={() => navigate(`/module/${mod.id}/lesson/${goTo}`)}>
+            Continue the lessons →
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const questions = mod.quiz;
   const passed = graded && score === 100;

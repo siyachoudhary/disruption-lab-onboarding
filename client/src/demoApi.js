@@ -104,6 +104,13 @@ export const demoApi = {
   async submitQuiz(moduleId, score) {
     const u = requireUser();
     const pct = Math.max(0, Math.min(100, Number(score) || 0));
+    // Quiz is locked until all lessons in the module are complete.
+    const meta = modules.find((m) => m.id === moduleId);
+    const existing = u.progress.find((p) => p.moduleId === moduleId);
+    const doneLessons = existing ? existing.lessonsCompleted.length : 0;
+    if (meta && doneLessons < meta.lessons.length) {
+      throw new Error("Complete all lessons before taking the quiz.");
+    }
     const p = getModule(u, moduleId);
     p.quizAttempts += 1;
     p.quizBestScore = Math.max(p.quizBestScore, pct);

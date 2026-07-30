@@ -105,18 +105,24 @@ export default function Sidebar({ open = true, onNavigate = () => {} }) {
                       </NavLink>
                     );
                   })}
-                  <NavLink
-                    to={`/module/${mod.id}/quiz`}
-                    className={({ isActive }) => "side-lesson quiz" + (isActive ? " active" : "")}
-                    onClick={onNavigate}
-                  >
-                    <span className={"side-lesson-dot" + (mp.quizPassed ? " done" : "")}>
-                      {mp.quizPassed ? "✓" : ""}
-                    </span>
-                    <span className="side-lesson-title">
-                      Quiz{mp.lessonsDone >= mp.totalLessons ? "" : " (locked)"}
-                    </span>
-                  </NavLink>
+                  {mp.lessonsDone >= mp.totalLessons ? (
+                    <NavLink
+                      to={`/module/${mod.id}/quiz`}
+                      className={({ isActive }) => "side-lesson quiz" + (isActive ? " active" : "")}
+                      onClick={onNavigate}
+                    >
+                      <span className={"side-lesson-dot" + (mp.quizPassed ? " done" : "")}>
+                        {mp.quizPassed ? "✓" : ""}
+                      </span>
+                      <span className="side-lesson-title">Quiz</span>
+                    </NavLink>
+                  ) : (
+                    <div className="side-lesson quiz locked" aria-disabled="true"
+                      title="Finish all lessons to unlock the quiz">
+                      <span className="side-lesson-dot" />
+                      <span className="side-lesson-title">Quiz (locked)</span>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

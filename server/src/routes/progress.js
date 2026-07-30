@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { requireAuth } from "../middleware/auth.js";
-import { MODULE_IDS, isOnboardingComplete } from "../curriculumMeta.js";
+import { MODULE_IDS, MODULES, isOnboardingComplete } from "../curriculumMeta.js";
 
 const router = Router();
 
@@ -33,6 +33,14 @@ router.post("/quiz", requireAuth, async (req, res) => {
   const { moduleId, score } = req.body || {};
   if (!MODULE_IDS.has(moduleId)) return res.status(400).json({ error: "Unknown module." });
   const pct = Math.max(0, Math.min(100, Number(score) || 0));
+
+  // The quiz is locked until every lesson in the module has been completed.
+  const meta = MODULES.find((m) => m.id === moduleId);
+  const existing = req.user.progress.find((p) => p.moduleId === moduleId);
+  const doneLessons = existing ? existing.lessonsCompleted.length : 0;
+  if (meta && doneLessons < meta.lessonCount) {
+    return res.status(400).json({ error: "Complete all lessons before taking the quiz." });
+  }
 
   const mod = getOrCreateModule(req.user, moduleId);
   mod.quizAttempts += 1;
