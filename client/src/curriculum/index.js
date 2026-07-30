@@ -23,14 +23,14 @@ export const modules = [
     id: "welcome",
     title: "Welcome & Team Expectations",
     emoji: "",
-    estMinutes: 52,
+    estMinutes: 58,
     blurb:
       "Before any code: how a Disruption Lab team runs week to week, what's expected of you, and who's there to help you grow.",
     lessons: [
       {
         id: "welcome-1",
         title: "The weekly rhythm: standup, dev night & client calls",
-        minutes: 14,
+        minutes: 18,
         body: `## You're joining a team, not just a codebase
 
 Disruption Lab projects are built by small teams shipping real software for real clients. That only works if everyone shows up to a few shared touchpoints each week. Here are the three you'll hear about constantly.
@@ -55,11 +55,43 @@ A **standup** is a short, regular check-in (often 1–2x per week for student te
 
 **What it looks like:** you work through your assigned tasks, **pair up** with teammates, and **ask your TL for help** when you're stuck. The PM checks in on progress and priorities. Most of the real collaboration, learning, and unblocking happens here — which is exactly why showing up matters so much. Come with your environment set up and your current task in mind.
 
+## How your work gets assigned
+
+Disruption Lab keeps this **lightweight — there's no formal ticket system** (no Jira, Linear, etc.). Instead, work flows around dev nights:
+
+1. **You're assigned work at a dev night** by your PM or TL.
+2. **You work on it throughout the week** on your own time — don't wait until the last minute.
+3. **You give a progress update at standup** so the team knows where it stands.
+4. **You complete it by the dev night after next** (the "next-next" dev night) — so you get roughly **two dev-night cycles** per assignment.
+
+That cycle — *assigned at dev night → work through the week → update at standup → done by the dev night after next* — is the core loop of your week. Keeping steady momentum (rather than cramming the night before) is exactly what makes you a reliable teammate.
+
+## Why finishing on time is critical
+
+The single best way to be successful at Disruption Lab is simple: **complete the tasks your leadership assigns you, on time, and make sure your work isn't causing problems for other people.**
+
+This matters far more than it might seem, because software projects are **interconnected** — other parts of the project often **depend on your piece being finished.** If you fall behind:
+
+- Teammates waiting on your work get **blocked** and can't move forward.
+- The overall project timeline **slips**.
+- **Client expectations may not be met** — and the client is who the entire project is for.
+
+So being on time isn't just about you; it keeps the whole team and the client on track. It is **critical** to hit your deadlines. And if you ever realize you *won't* make one, **say so early** (see the communication lesson) so the team can adjust before it becomes a problem — a heads-up in advance is always better than a surprise.
+
 ## Client calls
 
 **Client calls** are meetings with the actual client or stakeholder the project is being built for. They're more formal than internal meetings.
 
 **What they look like:** the PM (often with the TL) leads the conversation. You might **demo the feature you built**, answer questions about it, or take notes on new requirements. Be prepared, be professional, and **don't overpromise** — if you're unsure whether something is possible, say you'll follow up rather than committing on the spot. You represent Disruption Lab on these calls.
+
+## Client presentations
+
+Alongside regular calls, your team will give **client presentations** — formal moments where you present your work to the client.
+
+- **Every project has a final presentation** at the end, where the team presents the finished product. This one is a certainty, so plan for it.
+- **Depending on the client, there may also be a midpoint presentation** partway through to show progress and gather feedback.
+
+These are high-visibility — the client is judging the team's work, and you may present the part you built. Prepare, practice what you'll say, and bring the same professionalism as a client call. This is another reason on-time delivery matters: **your work needs to be done and working before a presentation**, not scrambled together the night before.
 
 ## Org-wide & social events
 
@@ -93,7 +125,7 @@ Life happens — that's fine, and it's how you avoid a strike. What's **not** fi
 
 - **Give notice in advance**, not after the fact — this is what gets an absence excused.
 - Message your **PM or TL** as early as you know.
-- A quick "I can't make dev night this week, but I'll have my ticket done by Friday and I'm available on Slack" keeps everything running.
+- A quick "I can't make dev night this week, but I'll have my assigned work done and I'm available on Slack" keeps everything running.
 
 ## Everyday communication
 
@@ -122,7 +154,7 @@ Your project leadership has the final say, but these are the things that typical
 - **An unexcused absence from a mandatory org-wide or social event** (you'll always be told when one is mandatory).
 - **Not completing this onboarding certification before Dev Night 1.** You get about a week from kickoff; finishing it is your first responsibility on the team.
 - **Going unresponsive / ghosting** — not replying in your team channel for an extended stretch with no heads-up.
-- **Repeatedly missing your committed deadlines or tickets** without communicating about it.
+- **Repeatedly missing the deadlines on your assigned work** (work is due by the dev night after next) without communicating about it.
 - **No-showing or being clearly unprepared for a client call.**
 - **Unprofessional conduct** toward teammates, leadership, or the client.
 
@@ -297,9 +329,39 @@ Do those consistently, and you won't just finish onboarding — you'll be on tra
           "Asking your TL for help when you're stuck",
           "Telling your PM in advance that you'll miss a dev night",
           "Not completing this certification before Dev Night 1, or an unexcused absence",
-          "Finishing a ticket early",
+          "Finishing your assigned work early",
         ],
         answer: 2,
+      },
+      {
+        q: "How does work typically get assigned and tracked at Disruption Lab?",
+        options: [
+          "Through a formal ticket system like Jira you check daily",
+          "Assigned at dev night, worked on through the week, updated at standup, and due by the dev night after next",
+          "You choose whatever you feel like working on with no deadline",
+          "The client assigns tasks to you directly each morning",
+        ],
+        answer: 1,
+      },
+      {
+        q: "Why is it critical to finish your assigned work on time?",
+        options: [
+          "It isn't — deadlines are just suggestions",
+          "Other parts of the project may depend on your work; if you're late, teammates get blocked, the timeline slips, and client expectations may not be met",
+          "Only so you can leave dev night early",
+          "So you can take on the client's job yourself",
+        ],
+        answer: 1,
+      },
+      {
+        q: "Which is true about client presentations?",
+        options: [
+          "They never happen for student projects",
+          "Every project has a final presentation, and some clients also have a midpoint presentation",
+          "Only the PM ever presents and the client never sees the work",
+          "They replace all dev nights",
+        ],
+        answer: 1,
       },
       {
         q: "How much time per week is dev night, and who sets when and where it happens?",
@@ -1455,18 +1517,20 @@ When several people build one product, you need a shared way to decide *what* to
 
 - **Ticket / Issue** — one unit of work ("Add password reset"). Tracked in tools like **Jira, Linear, or GitHub Issues**.
 - **Backlog** — the prioritized list of everything not yet done.
-- **Sprint** — a short time-box (often 1–2 weeks) where the team commits to a set of tickets.
-- **Standup** — a quick daily sync: *what I did, what I'm doing, what's blocking me.*
+- **Sprint** — a short time-box (often 1–2 weeks) where the team commits to a set of work.
+- **Standup** — a quick sync: *what I did, what I'm doing, what's blocking me.*
 - **Retro (retrospective)** — a look back: what went well, what to improve.
+
+> **How this maps to Disruption Lab:** we keep it lightweight — **no formal ticket tool**. Your work is assigned at dev night, you update the team at standup, and it's due by the dev night after next. The vocabulary above is still worth knowing, because you'll run into Jira/Linear-style ticket boards at internships and jobs.
 
 ## Your loop as a contributor
 
-1. **Pick up a ticket** from the board and move it to "In Progress".
+1. **Take your assigned task** (at DLab, this comes from dev night).
 2. Create a **branch** for it.
 3. Do the work; commit as you go.
-4. Open a **PR**, link it to the ticket.
+4. Open a **PR** for it.
 5. Address review feedback; get it merged.
-6. Move the ticket to "Done".
+6. Confirm it's **done** with your PM/TL.
 
 ## Definition of "done"
 
@@ -1484,7 +1548,7 @@ On a team, **clear communication beats raw coding speed.** A brilliant solution 
 
 - **Ask early.** Stuck for more than ~30 minutes? Ask. Struggling productively is good; suffering silently for a day is not.
 - **Ask well.** Share what you're trying to do, what you tried, and the exact error. "It doesn't work" wastes everyone's time; a clear question gets a fast answer.
-- **Communicate status.** If you're blocked or running late on a ticket, say so *before* the deadline, not after.
+- **Communicate status.** If you're blocked or running late on your assigned work, say so *before* the deadline, not after.
 - **Write things down.** Decisions in a thread or doc, not just in your head. Your teammates (and future you) will thank you.
 
 ## Working with Git as a team
