@@ -383,6 +383,21 @@ label.field span { display: block; font-size: 13px; font-weight: 600; margin-bot
   content: ""; position: absolute; inset: 10px; border: 1px solid var(--orange);
   border-radius: 8px; pointer-events: none;
 }
+/* diagonal repeating watermark — visible in screenshots & prints */
+.certificate-watermark {
+  position: absolute; inset: 0; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; gap: 34px;
+  transform: rotate(-24deg) scale(1.5);
+  pointer-events: none; user-select: none; z-index: 0;
+}
+.certificate-watermark span {
+  white-space: nowrap; text-align: center; text-transform: uppercase;
+  font-size: 26px; font-weight: 800; letter-spacing: 4px;
+  color: var(--navy); opacity: 0.06;
+}
+/* keep all real content above the watermark */
+.certificate > *:not(.certificate-watermark) { position: relative; z-index: 1; }
+
 .certificate .kicker { letter-spacing: 3px; text-transform: uppercase; font-weight: 800; color: var(--orange-ink); font-size: 13px; }
 .certificate h1 { font-size: 30px; margin: 8px 0 2px; color: var(--navy); }
 .certificate .recipient { font-size: 38px; font-weight: 800; margin: 20px 0 6px; color: var(--navy); }
@@ -391,10 +406,31 @@ label.field span { display: block; font-size: 13px; font-weight: 600; margin-bot
 .certificate .body-text { max-width: 620px; margin: 0 auto; color: #3a4256; }
 
 @media print {
-  .nav, .no-print { display: none !important; }
-  body, .container { background: #fff; }
-  .certificate { box-shadow: none; border-color: var(--navy); }
-  [data-theme="dark"] .certificate { background: #fff; color: #17223a; }
+  /* Print the certificate on its own clean landscape page. */
+  @page { size: landscape; margin: 14mm; }
+
+  /* Make background colors / brand fills actually print. */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Hide everything that isn't the certificate. */
+  .nav, .no-print, .sidebar, .sidebar-backdrop, .demo-banner { display: none !important; }
+
+  html, body { background: #fff !important; }
+
+  /* Collapse the app shell so the certificate can center on the page. */
+  .shell, .shell-main { display: block !important; }
+  .container {
+    max-width: none !important; margin: 0 !important; padding: 0 !important;
+    display: flex; align-items: center; justify-content: center; min-height: 0;
+  }
+
+  .certificate {
+    box-shadow: none; border-color: var(--navy);
+    width: 100%; max-width: 1000px; padding: 40px 52px;
+    background: #fff !important; color: #17223a !important;
+    page-break-inside: avoid;
+  }
+  [data-theme="dark"] .certificate { background: #fff !important; color: #17223a !important; }
 }
 
 /* ---------- demo banner ---------- */

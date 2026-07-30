@@ -47,6 +47,13 @@ export default function Certificate() {
       </div>
 
       <div className="certificate">
+        <div className="certificate-watermark" aria-hidden="true">
+          {Array.from({ length: 9 }).map((_, i) => (
+            <span key={i}>
+              Disruption Lab · powered by Gies · Disruption Lab · powered by Gies · Disruption Lab
+            </span>
+          ))}
+        </div>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
           <Logo size={64} />
         </div>
