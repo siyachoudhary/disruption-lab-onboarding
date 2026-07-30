@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:pages": "DEPLOY_BASE=/disruption-lab-onboarding/ VITE_DEMO=true vite build && touch dist/.nojekyll",
-    "deploy": "npm run build:pages && gh-pages -d dist -t true"
+    "deploy": "npm run build:pages && gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "react": "^18.3.1",
