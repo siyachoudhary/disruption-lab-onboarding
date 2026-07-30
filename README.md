@@ -26,6 +26,52 @@ Designed to be completed in **~10–15 hours over one week**.
 
 The in-app **Dashboard** shows a suggested day-by-day one-week schedule and live progress.
 
+### Curriculum — modules & topics
+
+Every module ends with a quiz that must be passed at **100%**, and each quiz stays **locked
+until all of that module's lessons are completed**.
+
+**1. Welcome & Team Expectations** · ~40 min — how a DLab team actually runs, before any code.
+- The weekly rhythm: standup, dev night (2 hrs/week), and client calls — what they are and look like
+- Attendance & communication expectations (incl. the 3-unexcused-strikes policy)
+- Who's who: PMs, TLs, the Engineering Manager & Head of Tech — and how they help you advance
+
+**2. Dev Environment & the Command Line** · ~1 hr
+- How software actually gets built (editor, terminal, Git, runtime)
+- Terminal survival kit (core commands, reading a command)
+- Packages, projects & running code (npm, `package.json`, scripts)
+
+**3. Git & GitHub** · ~3 hrs
+- Why Git exists & the core loop (add / commit / push / pull)
+- Branches: working without fear
+- Pull Requests & code review
+- Forks, remotes & fixing mistakes
+
+**4. APIs & How the Web Talks** · ~2 hrs
+- What an API actually is (client/server, requests/responses)
+- HTTP methods, status codes & JSON
+- Calling an API & keeping keys safe
+
+**5. Cloud & AWS** · ~2.5 hrs
+- What "the cloud" really is
+- EC2 — rented computers (instance types, when to use it)
+- S3 & the wider AWS toolbox (EC2 vs S3, Lambda, RDS, IAM…)
+
+**6. Data, Databases & Secrets** · ~1.5 hrs
+- Databases: SQL vs NoSQL
+- CRUD & thinking in data
+- Environment variables & secrets
+
+**7. Using AI Tools Effectively** · ~1.5 hrs
+- What AI coding tools are good (and bad) at
+- Prompting well
+- Responsible & safe AI use
+
+**8. Working in a Team & Shipping** · ~2 hrs
+- How teams organize work (Agile basics)
+- Communication & collaboration
+- Shipping: from laptop to production (environments, deployment, CI/CD)
+
 ### Features
 - Email/password accounts (JWT auth, bcrypt-hashed passwords).
 - Readable, paginated lessons (Markdown) with per-lesson time estimates.
