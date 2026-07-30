@@ -11,11 +11,11 @@ Designed to be completed in **~10–15 hours over one week**.
 
 ## What's inside
 
-**8 modules · 25 lessons · a quiz per module**
+**8 modules · 26 lessons · a quiz per module**
 
 | # | Module | ~Time |
 |---|--------|------|
-| 1 | Welcome & Team Expectations (standup, dev night, client calls, PM/TL roles) | 40 min |
+| 1 | Welcome & Team Expectations (standup, dev night, client calls, strike system, PM/TL roles) | 50 min |
 | 2 | Dev Environment & the Command Line | 1 hr |
 | 3 | Git & GitHub (push/pull/clone/branches/PRs/forking) | 3 hrs |
 | 4 | APIs & How the Web Talks | 2 hrs |
@@ -31,9 +31,10 @@ The in-app **Dashboard** shows a suggested day-by-day one-week schedule and live
 Every module ends with a quiz that must be passed at **100%**, and each quiz stays **locked
 until all of that module's lessons are completed**.
 
-**1. Welcome & Team Expectations** · ~40 min — how a DLab team actually runs, before any code.
-- The weekly rhythm: standup, dev night (2 hrs/week), and client calls — what they are and look like
-- Attendance & communication expectations (incl. the 3-unexcused-strikes policy)
+**1. Welcome & Team Expectations** · ~50 min — how a DLab team actually runs, before any code.
+- The weekly rhythm: standup, dev night (2 hrs/week), and client calls — what they are and look like (incl. the deadline: finish this certification before Dev Night 1)
+- Attendance & communication expectations
+- The strike system — what earns a strike and what happens at each one (3rd strike = removed from the lab)
 - Who's who: PMs, TLs, the Engineering Manager & Head of Tech — and how they help you advance
 
 **2. Dev Environment & the Command Line** · ~1 hr

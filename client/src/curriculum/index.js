@@ -23,7 +23,7 @@ export const modules = [
     id: "welcome",
     title: "Welcome & Team Expectations",
     emoji: "",
-    estMinutes: 40,
+    estMinutes: 52,
     blurb:
       "Before any code: how a Disruption Lab team runs week to week, what's expected of you, and who's there to help you grow.",
     lessons: [
@@ -36,6 +36,8 @@ export const modules = [
 Disruption Lab projects are built by small teams shipping real software for real clients. That only works if everyone shows up to a few shared touchpoints each week. Here are the three you'll hear about constantly.
 
 *(Exact days, times, and tools vary by team — your PM will share yours. What matters is understanding what each event is **for**.)*
+
+> **⚠️ Your first deadline — read this now.** There is usually about **one week between kickoff and your first dev night**. You are expected to **complete this entire certification before Dev Night 1**. Not finishing it in time counts as a **strike** (see the *Strike system* lesson in this module). So don't leave it to the last minute — pace yourself across the week using the suggested schedule on your dashboard.
 
 ## Standup
 
@@ -74,7 +76,7 @@ In a class, missing a session mostly affects you. On a team, **your absence bloc
 
 ## The strike policy
 
-Attendance is taken seriously: **if you accumulate 3 or more unexcused absence strikes, you will be removed from the lab.** The word that matters is **unexcused** — an absence you communicate about in advance is a very different thing from simply not showing up. The rule isn't there to punish you; it's there because a team can't function when members disappear without notice.
+Attendance is taken seriously: an **unexcused absence** from a required team event is one of the things that earns a **strike**, and **3 strikes means you're removed from the lab.** The word that matters is **unexcused** — an absence you communicate about in advance is a very different thing from simply not showing up. Strikes aren't only about absences, though — the **next lesson breaks down the full strike system**: everything that can earn a strike and exactly what happens at each one.
 
 ## When you can't make it
 
@@ -94,6 +96,46 @@ Life happens — that's fine, and it's how you avoid a strike. What's **not** fi
 ## Professionalism
 
 Especially on client calls and in shared channels, remember you're representing Disruption Lab. Be respectful, communicate clearly, and follow through on what you say you'll do.`,
+      },
+      {
+        id: "welcome-strikes",
+        title: "The strike system",
+        minutes: 12,
+        body: `## Why strikes exist
+
+A Disruption Lab team only works if everyone can rely on everyone else. The **strike system** is how we keep that reliability fair and transparent: instead of vague expectations, there's a clear, limited set of consequences so you always know where you stand. Strikes are about **patterns of dropping the ball or disappearing** — not honest mistakes, not asking for help, and not the occasional thing that comes up in life (as long as you communicate).
+
+## What can earn a strike
+
+Your project leadership has the final say, but these are the things that typically count as a strike:
+
+- **An unexcused absence** from a required team event — dev night, standup, or a client call you were expected to attend.
+- **Not completing this onboarding certification before Dev Night 1.** You get about a week from kickoff; finishing it is your first responsibility on the team.
+- **Going unresponsive / ghosting** — not replying in your team channel for an extended stretch with no heads-up.
+- **Repeatedly missing your committed deadlines or tickets** without communicating about it.
+- **No-showing or being clearly unprepared for a client call.**
+- **Unprofessional conduct** toward teammates, leadership, or the client.
+
+The common thread: almost every strike comes from **not communicating**. An absence or a slipped deadline you flag *in advance* is excused and does **not** earn a strike — the same event with silence does.
+
+## What happens at each strike
+
+| Strike | What happens |
+|---|---|
+| **Strike 1** | Recorded. Your PM or TL gives you a heads-up so you know where you stand and can course-correct. |
+| **Strike 2** | A direct conversation with your project leadership about what's going wrong and how to fix it. Treat this as a final warning. |
+| **Strike 3** | You are **removed from the lab.** |
+
+## How to make sure you never get one
+
+It's genuinely simple, and it's the same lesson as the rest of this module:
+
+- **Communicate in advance.** Can't make a session? Deadline slipping? Say so *before*, to your PM/TL. That turns a potential strike into a non-issue.
+- **Finish this certification before Dev Night 1.** Use the suggested weekly schedule on your dashboard so it doesn't pile up.
+- **Stay reachable** and answer in your team channel.
+- **Ask for help early** — being stuck is never a strike; disappearing is.
+
+Do those, and the strike system is something you'll never have to think about again.`,
       },
       {
         id: "welcome-3",
@@ -220,12 +262,32 @@ Do those consistently, and you won't just finish onboarding — you'll be on tra
         answer: 1,
       },
       {
-        q: "What happens if you accumulate 3 or more unexcused absence strikes?",
+        q: "By when are you expected to complete this entire certification?",
         options: [
-          "Nothing — attendance isn't tracked",
+          "There's no deadline — whenever you get to it",
+          "Before your first dev night (about a week after kickoff)",
+          "By the end of the semester",
+          "Before the final client call",
+        ],
+        answer: 1,
+      },
+      {
+        q: "What happens when you reach your 3rd strike?",
+        options: [
+          "Nothing — strikes aren't tracked",
           "You get a warning email only",
-          "You will be removed from the lab",
+          "You are removed from the lab",
           "Your certificate is revoked",
+        ],
+        answer: 2,
+      },
+      {
+        q: "Which of these would typically earn a strike?",
+        options: [
+          "Asking your TL for help when you're stuck",
+          "Telling your PM in advance that you'll miss a dev night",
+          "Not completing this certification before Dev Night 1, or an unexcused absence",
+          "Finishing a ticket early",
         ],
         answer: 2,
       },
