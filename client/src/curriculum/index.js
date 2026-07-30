@@ -123,7 +123,7 @@ The common thread: almost every strike comes from **not communicating**. An abse
 | Strike | What happens |
 |---|---|
 | **Strike 1** | Recorded. Your PM or TL gives you a heads-up so you know where you stand and can course-correct. |
-| **Strike 2** | A direct conversation with your project leadership about what's going wrong and how to fix it. Treat this as a final warning. |
+| **Strike 2** | A direct conversation with your project leadership and a Senior Leadership Team member about what's going wrong and how to fix it. Treat this as a final warning. |
 | **Strike 3** | You are **removed from the lab.** |
 
 ## How to make sure you never get one

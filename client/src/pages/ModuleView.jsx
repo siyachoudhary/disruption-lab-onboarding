@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useAuth } from "../context/AuthContext";
 import { api } from "../api";
 import { moduleById, modules } from "../curriculum";
@@ -100,7 +101,7 @@ export default function ModuleView() {
         </div>
         <div className="divider" />
         <div className="lesson-body">
-          <ReactMarkdown>{lesson.body}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{lesson.body}</ReactMarkdown>
         </div>
 
         <div className="divider" />
