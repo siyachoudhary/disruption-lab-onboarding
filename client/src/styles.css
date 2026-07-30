@@ -370,7 +370,8 @@ label.field span { display: block; font-size: 13px; font-weight: 600; margin-bot
 
 /* ---------- certificate ---------- */
 .certificate {
-  background: var(--surface);
+  /* Always a light "paper" document, even in dark mode. */
+  background: #ffffff;
   color: #17223a;
   border: 2px solid var(--navy);
   border-radius: 14px;
@@ -398,7 +399,7 @@ label.field span { display: block; font-size: 13px; font-weight: 600; margin-bot
 /* keep all real content above the watermark */
 .certificate > *:not(.certificate-watermark) { position: relative; z-index: 1; }
 
-.certificate .kicker { letter-spacing: 3px; text-transform: uppercase; font-weight: 800; color: var(--orange-ink); font-size: 13px; }
+.certificate .kicker { letter-spacing: 3px; text-transform: uppercase; font-weight: 800; color: #c24905; font-size: 13px; }
 .certificate h1 { font-size: 30px; margin: 8px 0 2px; color: var(--navy); }
 .certificate .recipient { font-size: 38px; font-weight: 800; margin: 20px 0 6px; color: var(--navy); }
 .certificate .rule { width: 300px; height: 2px; background: var(--orange); margin: 6px auto 20px; }
